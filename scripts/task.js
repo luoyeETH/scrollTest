@@ -19,20 +19,22 @@ function getRandomElements(array, count) {
 }
 
 async function executeRandomly(scrollOkayBears, privateKey, provider) {
-  const maxIterations = 5;
-  let count = 0;
+  while (true) {
+    const maxIterations = 5;
+    let count = 0;
 
-  while (count < maxIterations) {
-    console.log(`Iteration ${count + 1}`);
-    try {
-      await writeDataLoop(scrollOkayBears, privateKey, provider);
-    } catch (error) {
-      console.log(`Error writing data to contract\n` + error);
+    while (count < maxIterations) {
+      console.log(`Iteration ${count + 1}`);
+      try {
+        await writeDataLoop(scrollOkayBears, privateKey, provider);
+      } catch (error) {
+        console.log(`Error writing data to contract\n` + error);
+      }
+      count++;
+      let randomDelay = getRandomDelay();
+      console.log(`Waiting for ${randomDelay} milliseconds`);
+      await delay(randomDelay); // 等待随机的延迟时间
     }
-    count++;
-    let randomDelay = getRandomDelay();
-    console.log(`Waiting for ${randomDelay} milliseconds`);
-    await delay(randomDelay); // 等待随机的延迟时间
   }
 }
 
