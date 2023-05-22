@@ -61,8 +61,8 @@ async function main() {
   const provider = new ethers.providers.JsonRpcProvider("https://alpha-rpc.scroll.io/l2");
   console.log("ScrollOkayBears contract deployed to:", scrollOkayBears.address);
 
-  const executeTasks = privateKeys.map(privateKey => executeRandomly(scrollOkayBears, privateKey, provider));
-  await Promise.all(executeTasks);
+//   const executeTasks = privateKeys.map(privateKey => executeRandomly(scrollOkayBears, privateKey, provider));
+//   await Promise.all(executeTasks);
 }
 
 main().catch((error) => {
