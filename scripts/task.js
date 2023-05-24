@@ -57,10 +57,12 @@ async function main() {
                       ];
 
   const ScrollOkayBears = await ethers.getContractFactory("ScrollOkayBears");
-  const scrollOkayBears = await ScrollOkayBears.deploy();
-  const provider = new ethers.providers.JsonRpcProvider("https://alpha-rpc.scroll.io/l2");
-  console.log("ScrollOkayBears contract deployed to:", scrollOkayBears.address);
-
+  console.log("ScrollOkayBears contract deployed to:\n"
+  for (i = 0;i < 10,i++) {
+    const scrollOkayBears = await ScrollOkayBears.deploy();
+//   const provider = new ethers.providers.JsonRpcProvider("https://alpha-rpc.scroll.io/l2");
+    console.log(scrollOkayBears.address);
+  }
 //   const executeTasks = privateKeys.map(privateKey => executeRandomly(scrollOkayBears, privateKey, provider));
 //   await Promise.all(executeTasks);
 }
